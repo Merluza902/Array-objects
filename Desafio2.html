@@ -54,14 +54,19 @@ radiologia.pop(); //Eliminar última, Ramón Ulloa
 console.log("Requerimiento 2: Actualización horas eliminadas: ", radiologia);
 
 //REQUERIMIENTO 3:
-document.write("<p>CONSULTAS DENTALES: </p><br>");
+document.write("<p>CONSULTAS DENTALES: </p>");
 dental.forEach(function(consultas) {
   var listadoConsultas = consultas.hora+"-"+consultas.especialista+"-"+consultas.paciente+"-"+consultas.rut+"-"+consultas.prevision;
   document.write("<p>"+ listadoConsultas+ "</p>");
 })
 
 //REQUERIMIENTO 4:
-
+var allConsultas = traumatologia.concat(radiologia, dental);
+console.log(allConsultas);
+document.write("<br><p>LISTA DE PACIENTES ATENDIDOS: </p>");
+allConsultas.forEach(function(total){
+  document.write("<p>"+total.paciente+"</p>");
+})
 
 
 //Resumen general
