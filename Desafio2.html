@@ -73,29 +73,28 @@ var pIsapre = dental.filter(function(filtrar){
   return filtrar.prevision === "ISAPRE";
 })
 document.write("<br><p>LISTADO DE PACIENTES ISAPRE EN LA CONSULTA DENTAL: </p>");
-pIsapre.forEach(function(buscar){
+pIsapre.forEach(function(filtrar){
+  document.write("<p>"+filtrar.paciente+"-"+filtrar.prevision+"</p>");
+})
+
+//REQUERIMIENTO 6:
+var pFonasa = traumatologia.filter(function(buscar){
+  return buscar.prevision === "FONASA";
+})
+document.write("<br><p>LISTADO DE PACIENTES FONASA EN LA CONSULTA TRAUMATOLOGÍA: </p>");
+pFonasa.forEach(function(buscar){
   document.write("<p>"+buscar.paciente+"-"+buscar.prevision+"</p>");
 })
 
 
 //Resumen general
-document.write(`<p>Cantidad de atenciones para Radiología: ${radiologia.length}</p>`);
+document.write(`<br><p>Cantidad de atenciones para Radiología: ${radiologia.length}</p>`);
 document.write(`<p>Cantidad de atenciones para Traumatología: ${traumatologia.length}</p>`);
 document.write(`<p>Cantidad de atenciones para Dental: ${dental.length}</p>`);
 
 document.write(`<p>Primera atencion: ${radiologia[0].paciente} - ${radiologia[0].prevision} | Última atención: ${radiologia[radiologia.length -1].paciente} - ${radiologia[radiologia.length -1].prevision}.</p>`);
 document.write(`<p>Primera atencion: ${traumatologia[0].paciente} - ${traumatologia[0].prevision} | Última atención: ${traumatologia[traumatologia.length -1].paciente} - ${traumatologia[traumatologia.length -1].prevision}.</p>`);
 document.write(`<p>Primera atencion: ${dental[0].paciente} - ${dental[0].prevision} | Última atención: ${dental[dental.length -1].paciente} - ${dental[dental.length -1].prevision}.</p>`);
-
-
-//RESOLUCIÓN EJERCICIO
-/* Requerimiento 6: Filtrar pacientes de FONASA en la lista de consultas médicas de Traumatología
-var totalFonasaTraumatologia = traumatologia.filter(function (c) {
-  return c.prevision === "FONASA";
-});
-...
- */
-
 
 </script>
 <body>
