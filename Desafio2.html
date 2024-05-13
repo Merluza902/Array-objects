@@ -68,6 +68,15 @@ allConsultas.forEach(function(total){
   document.write("<p>"+total.paciente+"</p>");
 })
 
+//REQUERIMIENTO 5:
+var pIsapre = dental.filter(function(filtrar){
+  return filtrar.prevision === "ISAPRE";
+})
+document.write("<br><p>LISTADO DE PACIENTES ISAPRE EN LA CONSULTA DENTAL: </p>");
+pIsapre.forEach(function(buscar){
+  document.write("<p>"+buscar.paciente+"-"+buscar.prevision+"</p>");
+})
+
 
 //Resumen general
 document.write(`<p>Cantidad de atenciones para Radiología: ${radiologia.length}</p>`);
@@ -80,18 +89,7 @@ document.write(`<p>Primera atencion: ${dental[0].paciente} - ${dental[0].previsi
 
 
 //RESOLUCIÓN EJERCICIO
-/*
-// Requerimiento 4: Imprimir un listado total de todos los pacientes que se atendieron en el centro médico
-var totalConsultas = traumatologia.concat(radiologia, dental);
-document.write("<p>Listado total de pacientes atendidos:</p>");
-totalConsultas.forEach(function (c) {
-  ...
-});
-
-// Requerimiento 5: Filtrar pacientes de ISAPRE en la lista de consultas médicas de Dental
-
-
-// Requerimiento 6: Filtrar pacientes de FONASA en la lista de consultas médicas de Traumatología
+/* Requerimiento 6: Filtrar pacientes de FONASA en la lista de consultas médicas de Traumatología
 var totalFonasaTraumatologia = traumatologia.filter(function (c) {
   return c.prevision === "FONASA";
 });
